@@ -1,0 +1,33 @@
+common:
+  meta_file_folder: './data/ESD/'
+
+data:
+  sampling_rate: 16000
+  num_filter_bank: 40
+  classes: [Angry, Happy, Neutral, Sad, Surprise]
+  max_length: 300
+
+model:
+  in_channel: 3
+  num_kernel1: 128
+  num_kernel2: 256
+  hidden_dim_cnn: 768
+  hidden_dim_fc: 64
+  cell_units: 128
+  dropout_prob: 0.2
+  num_layers_lstm: 1
+  kernel_size: !!python/tuple [5, 3]
+  max_pooling_size: !!python/tuple [2, 4]
+
+train:
+  train_batch_size: 256
+  eval_batch_size: 32
+  num_epochs: 5000
+  learning_rate: 0.0001
+  momentum: 0.9
+  use_gpu: !!bool True
+
+checkpoint:
+  save_folder: './checkpoint/'
+  continue_once: './checkpoint/model.pt'
+  valid_interval: 300
