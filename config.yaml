@@ -16,7 +16,7 @@ model:
   cell_units: 128
   dropout_prob: 0.2
   num_layers_lstm: 1
-  kernel_size: !!python/tuple [5, 3]
+  kernel_size: !!python/tuple [5, 3] # có thể sử dụng !! tuple[5, 3]
   max_pooling_size: !!python/tuple [2, 4]
 
 train:
