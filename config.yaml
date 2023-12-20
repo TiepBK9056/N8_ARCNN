@@ -14,17 +14,17 @@ model:
   hidden_dim_cnn: 768
   hidden_dim_fc: 64
   cell_units: 128
-  dropout_prob: 0.2
-  num_layers_lstm: 1
-  kernel_size: !!python/tuple [5, 3] # có thể sử dụng !! tuple[5, 3]
-  max_pooling_size: !!python/tuple [2, 4]
+  dropout_prob: 0.2 # dropout probability
+  num_layers_lstm: 1 
+  kernel_size: !!tuple [5, 3] # có thể sử dụng !! tuple[5, 3]
+  max_pooling_size: !!tuple [2, 4] # ? tại sao các lớp pooling và filter không phải là ma trận vuông
 
 train:
-  train_batch_size: 256
-  eval_batch_size: 32
-  num_epochs: 5000
-  learning_rate: 0.0001
-  momentum: 0.9
+  train_batch_size: 256 # số lượng dữ liệu train một lần
+  eval_batch_size: 32 # số lượng dữ liệu test một lần
+  num_epochs: 5000 # số lượng epochs train
+  learning_rate: 0.0001 # 
+  momentum: 0.9 # hệ số momentum thuật toán tối ưu adam
   use_gpu: !!bool True
 
 checkpoint:
